@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane hgap="1.0" prefHeight="500.0" prefWidth="650.0" vgap="1.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <MenuBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="613.0" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+        <menus>
+          <Menu mnemonicParsing="false" text="Файл">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Создать">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Открыть">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Сохранить">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Сохранить как">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Печать">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Выход" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Правка">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Отменить">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Вырезать">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Копировать">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Вставить">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Удалить" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Найти">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Заменить">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Выделить все">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Вставить дату">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Формат">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Шрифт" />
+                  <MenuItem mnemonicParsing="false" text="Отступы" />
+                  <MenuItem mnemonicParsing="false" text="Перенос по словам" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Справка">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Справка" />
+                  <MenuItem mnemonicParsing="false" text="О программе" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <ComboBox prefWidth="200.0" GridPane.rowIndex="2" />
+      <TextArea prefHeight="396.0" prefWidth="783.0" GridPane.rowIndex="3" />
+      <ComboBox prefWidth="100.0" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="200.0" />
+         </GridPane.margin>
+      </ComboBox>
+      <ComboBox prefWidth="100.0" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="300.0" />
+         </GridPane.margin>
+      </ComboBox>
+      <ComboBox prefWidth="100.0" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets left="400.0" />
+         </GridPane.margin>
+      </ComboBox>
+      <Button mnemonicParsing="false" text="Button" textAlignment="JUSTIFY" GridPane.rowIndex="1" />
+      <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="53.0" />
+         </GridPane.margin>
+      </Button>
+      <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.rowIndex="2" />
+   </children>
+   <rowConstraints>
+      <RowConstraints maxHeight="113.9" minHeight="25.0" prefHeight="25.0" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="25.0" prefHeight="25.0" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="25.0" prefHeight="25.0" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="ALWAYS" />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints percentWidth="100.0" />
+   </columnConstraints>
+</GridPane>
