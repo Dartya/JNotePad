@@ -112,8 +112,12 @@
             </Menu>
         </menus>
       </MenuBar>
-      <ComboBox prefWidth="200.0" GridPane.rowIndex="2" />
       <TextArea prefHeight="396.0" prefWidth="783.0" GridPane.rowIndex="3" />
+      <ComboBox prefWidth="200.0" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </ComboBox>
       <ComboBox prefWidth="100.0" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets left="200.0" />
