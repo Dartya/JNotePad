@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.input.*?>
 <?import javafx.geometry.*?>
@@ -112,34 +114,27 @@
             </Menu>
         </menus>
       </MenuBar>
-      <TextArea prefHeight="396.0" prefWidth="783.0" GridPane.rowIndex="3" />
-      <ComboBox prefWidth="200.0" GridPane.rowIndex="2">
-         <GridPane.margin>
-            <Insets />
-         </GridPane.margin>
-      </ComboBox>
-      <ComboBox prefWidth="100.0" GridPane.rowIndex="2">
-         <GridPane.margin>
-            <Insets left="200.0" />
-         </GridPane.margin>
-      </ComboBox>
-      <ComboBox prefWidth="100.0" GridPane.rowIndex="2">
-         <GridPane.margin>
-            <Insets left="300.0" />
-         </GridPane.margin>
-      </ComboBox>
-      <ComboBox prefWidth="100.0" GridPane.rowIndex="2">
-         <GridPane.margin>
-            <Insets left="400.0" />
-         </GridPane.margin>
-      </ComboBox>
-      <Button mnemonicParsing="false" text="Button" textAlignment="JUSTIFY" GridPane.rowIndex="1" />
-      <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="1">
-         <GridPane.margin>
-            <Insets left="53.0" />
-         </GridPane.margin>
-      </Button>
-      <Separator orientation="VERTICAL" prefHeight="200.0" GridPane.rowIndex="2" />
+      <FlowPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+         <children>
+            <ComboBox prefHeight="25.0" prefWidth="190.0" />
+            <ComboBox prefWidth="100.0" />
+            <ComboBox prefWidth="100.0" />
+            <ComboBox prefWidth="100.0" />
+            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" text="Button" textAlignment="JUSTIFY" />
+            <Button mnemonicParsing="false" textAlignment="JUSTIFY" />
+         </children>
+      </FlowPane>
+      <FlowPane prefHeight="25.0" prefWidth="618.0" GridPane.rowIndex="1">
+         <children>
+            <Button mnemonicParsing="false" textAlignment="JUSTIFY" />
+            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" text="Button" />
+         </children>
+      </FlowPane>
+      <TextArea prefHeight="0.0" prefWidth="783.0" GridPane.rowIndex="3" />
    </children>
    <rowConstraints>
       <RowConstraints maxHeight="113.9" minHeight="25.0" prefHeight="25.0" />
