@@ -1,0 +1,6 @@
+#btn_left {
+    -fx-background-image: url("/sample/image/left.png");
+    -fx-background-size: 18 18;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position:left;
+}

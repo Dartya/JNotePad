@@ -1,101 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
 <?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.scene.input.*?>
 <?import javafx.geometry.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import java.net.URL?>
 
-<GridPane hgap="1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="650.0" vgap="1.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-   <children>
+<GridPane hgap="3.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="400.0" prefHeight="500.0" prefWidth="650.0" vgap="3.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <stylesheets>
+        <URL value="@main.css" />
+    </stylesheets>
+    <children>
       <MenuBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="613.0" GridPane.halignment="CENTER" GridPane.valignment="TOP">
         <menus>
           <Menu mnemonicParsing="false" text="Файл">
             <items>
-              <MenuItem mnemonicParsing="false" text="Создать">
+              <MenuItem mnemonicParsing="false" onAction="#createFileAction" text="Создать">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Открыть">
+                  <MenuItem mnemonicParsing="false" onAction="#openAction" text="Открыть">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Сохранить">
+                  <MenuItem mnemonicParsing="false" onAction="#saveAction" text="Сохранить">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Сохранить как">
+                  <MenuItem mnemonicParsing="false" onAction="#saveAsAction" text="Сохранить как">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Печать">
+                  <MenuItem mnemonicParsing="false" onAction="#printAction" text="Печать">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Выход" />
+                  <MenuItem mnemonicParsing="false" onAction="#exitAction" text="Выход" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Правка">
             <items>
-              <MenuItem mnemonicParsing="false" text="Отменить">
+              <MenuItem mnemonicParsing="false" onAction="#cancelAction" text="Отменить">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Вырезать">
+                  <MenuItem mnemonicParsing="false" onAction="#cutAction" text="Вырезать">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Копировать">
+                  <MenuItem mnemonicParsing="false" onAction="#copyAction" text="Копировать">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Вставить">
+                  <MenuItem mnemonicParsing="false" onAction="#pasteAction" text="Вставить">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Удалить">
+                  <MenuItem mnemonicParsing="false" onAction="#deleteAction" text="Удалить">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="DELETE" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Найти">
+                  <MenuItem mnemonicParsing="false" onAction="#findAction" text="Найти">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Заменить">
+                  <MenuItem mnemonicParsing="false" onAction="#replaceAction" text="Заменить">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Выделить все">
+                  <MenuItem mnemonicParsing="false" onAction="#highliteAction" text="Выделить все">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Вставить дату">
+                  <MenuItem mnemonicParsing="false" onAction="#insertDataAction" text="Вставить дату">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
@@ -104,46 +99,97 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Формат">
             <items>
-              <MenuItem mnemonicParsing="false" text="Шрифт" />
-                  <MenuItem mnemonicParsing="false" text="Отступы" />
-                  <MenuItem mnemonicParsing="false" text="Перенос по словам" />
+              <MenuItem mnemonicParsing="false" onAction="#fontChooseAction" text="Шрифт" />
+                  <MenuItem mnemonicParsing="false" onAction="#indentsAction" text="Отступы" />
+                  <MenuItem mnemonicParsing="false" onAction="#wordWrapAction" text="Перенос по словам" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Справка">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Справка" />
-                  <MenuItem mnemonicParsing="false" text="О программе" />
+                  <MenuItem mnemonicParsing="false" onAction="#manualWinAction" text="Справка" />
+                  <MenuItem mnemonicParsing="false" onAction="#aboutWinAction" text="О программе" />
                </items>
             </Menu>
         </menus>
       </MenuBar>
-      <FlowPane minHeight="25.0" minWidth="300.0" prefHeight="25.0" prefWidth="650.0" GridPane.rowIndex="2">
+      <FlowPane minHeight="25.0" minWidth="650.0" prefHeight="25.0" prefWidth="650.0" GridPane.rowIndex="2">
          <children>
-            <ComboBox prefHeight="25.0" prefWidth="190.0" />
-            <ComboBox prefWidth="100.0" />
-            <ComboBox prefWidth="100.0" />
-            <ComboBox prefWidth="100.0" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" textAlignment="JUSTIFY" />
-            <Button mnemonicParsing="false" textAlignment="JUSTIFY" />
+            <ComboBox prefWidth="190.0">
+               <FlowPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </FlowPane.margin>
+            </ComboBox>
+            <ComboBox prefWidth="100.0">
+               <FlowPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </FlowPane.margin>
+            </ComboBox>
+            <ComboBox prefWidth="100.0">
+               <FlowPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </FlowPane.margin>
+            </ComboBox>
+            <ComboBox prefWidth="100.0">
+               <FlowPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </FlowPane.margin>
+            </ComboBox>
+            <Button fx:id="leftButton" mnemonicParsing="false" onAction="#leftAlignmentAction" styleClass="#btn_left" stylesheets="@main.css" text="Left">
+               <FlowPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </FlowPane.margin>
+
+            </Button>
+            <Button fx:id="centerButton" mnemonicParsing="false" onAction="#centerAlignmentAction" text="Cent">
+               <FlowPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </FlowPane.margin>
+            </Button>
+            <Button fx:id="rightButton" mnemonicParsing="false" onAction="#rightAlignmentAction" text="Right">
+               <FlowPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </FlowPane.margin>
+            </Button>
          </children>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
       </FlowPane>
-      <FlowPane minHeight="25.0" minWidth="300.0" prefHeight="25.0" prefWidth="618.0" GridPane.rowIndex="1">
+      <FlowPane minHeight="25.0" minWidth="300.0" prefHeight="25.0" prefWidth="650.0" GridPane.rowIndex="1">
          <children>
-            <Button mnemonicParsing="false" textAlignment="JUSTIFY" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" onAction="#createFileAction" text="Create" textAlignment="JUSTIFY">
+               <FlowPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </FlowPane.margin></Button>
+            <Button mnemonicParsing="false" onAction="#openAction" text="Open">
+               <FlowPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </FlowPane.margin></Button>
+            <Button mnemonicParsing="false" onAction="#saveAction" text="Save">
+               <FlowPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </FlowPane.margin></Button>
+            <Button mnemonicParsing="false" onAction="#saveAsAction" text="Save as">
+               <FlowPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </FlowPane.margin></Button>
+            <Separator orientation="VERTICAL" prefHeight="6.0" prefWidth="0.0" />
+            <Button mnemonicParsing="false" onAction="#exitAction" text="Exit" />
          </children>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
       </FlowPane>
-      <TextArea prefHeight="0.0" prefWidth="783.0" GridPane.rowIndex="3" />
+      <TextArea fx:id="textAreaOne" prefHeight="0.0" prefWidth="783.0" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+         </GridPane.margin></TextArea>
    </children>
    <rowConstraints>
       <RowConstraints maxHeight="113.9" minHeight="25.0" prefHeight="25.0" />
       <RowConstraints maxHeight="1.7976931348623157E308" minHeight="25.0" prefHeight="25.0" />
-      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="25.0" prefHeight="25.0" />
-      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="27.0" prefHeight="27.0" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="25.0" prefHeight="25.0" vgrow="ALWAYS" />
    </rowConstraints>
    <columnConstraints>
       <ColumnConstraints percentWidth="100.0" />
