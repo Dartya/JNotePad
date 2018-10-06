@@ -74,7 +74,7 @@
                         <KeyCodeCombination alt="UP" code="DELETE" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" onAction="#findAction" text="Найти">
+                  <MenuItem fx:id="findMenuItem" mnemonicParsing="false" onAction="#findAction" text="Найти">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
@@ -134,18 +134,18 @@
                   <Insets left="2.0" right="2.0" />
                </FlowPane.margin>
             </ComboBox>
-            <Button fx:id="leftButton" mnemonicParsing="false" onAction="#leftAlignmentAction" styleClass="#btn_left" stylesheets="@main.css" text="Left">
+            <Button fx:id="leftButton" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#leftAlignmentAction" styleClass="btn_left" stylesheets="@main.css">
                <FlowPane.margin>
                   <Insets left="2.0" right="2.0" />
                </FlowPane.margin>
 
             </Button>
-            <Button fx:id="centerButton" mnemonicParsing="false" onAction="#centerAlignmentAction" text="Cent">
+            <Button fx:id="centerButton" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#centerAlignmentAction" styleClass="btn_center" stylesheets="@main.css">
                <FlowPane.margin>
                   <Insets left="2.0" right="2.0" />
                </FlowPane.margin>
             </Button>
-            <Button fx:id="rightButton" mnemonicParsing="false" onAction="#rightAlignmentAction" text="Right">
+            <Button fx:id="rightButton" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#rightAlignmentAction" styleClass="btn_right" stylesheets="@main.css">
                <FlowPane.margin>
                   <Insets left="2.0" right="2.0" />
                </FlowPane.margin>
@@ -157,24 +157,24 @@
       </FlowPane>
       <FlowPane minHeight="25.0" minWidth="300.0" prefHeight="25.0" prefWidth="650.0" GridPane.rowIndex="1">
          <children>
-            <Button mnemonicParsing="false" onAction="#createFileAction" text="Create" textAlignment="JUSTIFY">
+            <Button minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#createFileAction" styleClass="btn_create" textAlignment="JUSTIFY">
                <FlowPane.margin>
                   <Insets left="2.0" right="2.0" />
                </FlowPane.margin></Button>
-            <Button mnemonicParsing="false" onAction="#openAction" text="Open">
+            <Button minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#openAction" styleClass="btn_open">
                <FlowPane.margin>
                   <Insets left="2.0" right="2.0" />
                </FlowPane.margin></Button>
-            <Button mnemonicParsing="false" onAction="#saveAction" text="Save">
+            <Button minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#saveAction" styleClass="btn_save">
                <FlowPane.margin>
                   <Insets left="2.0" right="2.0" />
                </FlowPane.margin></Button>
-            <Button mnemonicParsing="false" onAction="#saveAsAction" text="Save as">
+            <Button minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#saveAsAction" styleClass="btn_save_as">
                <FlowPane.margin>
                   <Insets left="2.0" right="2.0" />
                </FlowPane.margin></Button>
             <Separator orientation="VERTICAL" prefHeight="6.0" prefWidth="0.0" />
-            <Button mnemonicParsing="false" onAction="#exitAction" text="Exit" />
+            <Button minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#exitAction" styleClass="btn_exit" />
          </children>
          <GridPane.margin>
             <Insets />
