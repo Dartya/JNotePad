@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import javafx.scene.input.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import java.net.URL?>
 
-<GridPane hgap="3.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="400.0" prefHeight="500.0" prefWidth="650.0" vgap="3.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane hgap="3.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="400.0" prefHeight="500.0" prefWidth="650.0" vgap="3.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerMain">
     <stylesheets>
         <URL value="@main.css" />
     </stylesheets>
@@ -114,22 +112,23 @@
       </MenuBar>
       <FlowPane minHeight="25.0" minWidth="650.0" prefHeight="25.0" prefWidth="650.0" GridPane.rowIndex="2">
          <children>
-            <ComboBox prefWidth="190.0">
+            <ComboBox fx:id="fontChoice" prefWidth="190.0">
+               <FlowPane.margin>
+                  <Insets left="2.0" right="2.0" />
+               </FlowPane.margin>
+
+            </ComboBox>
+            <ComboBox fx:id="fontSizeComboBox" prefWidth="100.0">
                <FlowPane.margin>
                   <Insets left="2.0" right="2.0" />
                </FlowPane.margin>
             </ComboBox>
-            <ComboBox prefWidth="100.0">
+            <ComboBox fx:id="fontColorComboBox" prefWidth="100.0">
                <FlowPane.margin>
                   <Insets left="2.0" right="2.0" />
                </FlowPane.margin>
             </ComboBox>
-            <ComboBox prefWidth="100.0">
-               <FlowPane.margin>
-                  <Insets left="2.0" right="2.0" />
-               </FlowPane.margin>
-            </ComboBox>
-            <ComboBox prefWidth="100.0">
+            <ComboBox fx:id="styleComboBox" prefWidth="100.0">
                <FlowPane.margin>
                   <Insets left="2.0" right="2.0" />
                </FlowPane.margin>
