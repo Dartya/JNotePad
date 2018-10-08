@@ -1,9 +1,11 @@
 package sample;
 
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class ControllerFind {
 
@@ -19,6 +21,8 @@ public class ControllerFind {
     }
 
     public void textFindCancelButtonAction(ActionEvent actionEvent) {
-
+        Node source = (Node) actionEvent.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 }

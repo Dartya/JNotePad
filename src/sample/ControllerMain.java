@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -86,7 +87,7 @@ public class ControllerMain {
     }
 
     public void exitAction(ActionEvent actionEvent) {
-
+        Platform.exit();
     }
 
     public void fontChooseAction(ActionEvent actionEvent) {
@@ -109,7 +110,7 @@ public class ControllerMain {
         try {
             Stage aboutstage = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("about_win.fxml"));
-            aboutstage.setTitle("Найти");
+            aboutstage.setTitle("О программе");
             aboutstage.setMinHeight(200);
             aboutstage.setMinWidth(150);
             aboutstage.setResizable(false);
@@ -164,19 +165,19 @@ public class ControllerMain {
 
     public void findAction(ActionEvent actionEvent) {
         try {
-            Stage stage = new Stage();
+            Stage stageFind = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("find_win.fxml"));
-            stage.setTitle("Найти");
-            stage.setMinHeight(200);
-            stage.setMinWidth(150);
-            stage.setResizable(false);
-            stage.setScene(new Scene(root));
-            stage.getIcons().add(new Image("image/search.png"));
-            stage.initModality(Modality.APPLICATION_MODAL);
+            stageFind.setTitle("Найти");
+            stageFind.setMinHeight(200);
+            stageFind.setMinWidth(150);
+            stageFind.setResizable(false);
+            stageFind.setScene(new Scene(root));
+            stageFind.getIcons().add(new Image("image/search.png"));
+            stageFind.initModality(Modality.APPLICATION_MODAL);
             //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
             //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
             //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
-            stage.showAndWait();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
+            stageFind.showAndWait();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
 
         } catch (IOException e) {
             e.printStackTrace();

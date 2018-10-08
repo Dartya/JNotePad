@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="150.0" maxWidth="400.0" minHeight="150.0" minWidth="400.0" prefHeight="150.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerFind">
+<VBox maxHeight="150.0" maxWidth="400.0" minHeight="100.0" minWidth="400.0" prefHeight="130.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerFind">
    <children>
       <Label fx:id="findTextLabel" text="Введите текст для поиска:">
          <VBox.margin>
@@ -23,14 +23,14 @@
       </TextField>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
          <children>
-            <Button fx:id="okTextFindButton" mnemonicParsing="false" onAction="#textFindOkButtonAction" prefHeight="25.0" prefWidth="100.0" text="OK" textAlignment="CENTER">
+            <Button fx:id="okTextFindButton" defaultButton="true" mnemonicParsing="false" onAction="#textFindOkButtonAction" prefHeight="25.0" prefWidth="100.0" text="OK" textAlignment="CENTER">
                <HBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                  <Insets left="20.0" right="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="cancelTextFindButton" mnemonicParsing="false" onAction="#textFindCancelButtonAction" prefHeight="25.0" prefWidth="100.0" text="Отмена" textAlignment="CENTER">
+            <Button fx:id="cancelTextFindButton" cancelButton="true" mnemonicParsing="false" onAction="#textFindCancelButtonAction" prefHeight="25.0" prefWidth="100.0" text="Отмена" textAlignment="CENTER">
                <HBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                  <Insets left="20.0" right="20.0" />
                </HBox.margin>
             </Button>
          </children>
