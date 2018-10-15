@@ -1,4 +1,4 @@
-package sample.Controllers;
+package sample;
 
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -108,7 +108,7 @@ public class ControllerMain {
     public void aboutWinAction(ActionEvent actionEvent) {
         try {
             Stage aboutstage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("/FXML/about_win.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("about_win.fxml"));
             aboutstage.setTitle("О программе");
             aboutstage.setMinHeight(200);
             aboutstage.setMinWidth(150);
@@ -165,7 +165,7 @@ public class ControllerMain {
     public void findAction(ActionEvent actionEvent) {
         try {
             Stage stageFind = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("FXML/find_win.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("find_win.fxml"));
             stageFind.setTitle("Найти");
             stageFind.setMinHeight(200);
             stageFind.setMinWidth(150);

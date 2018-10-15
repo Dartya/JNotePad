@@ -1,4 +1,4 @@
-package sample.Controllers;
+package sample;
 
 public class ControllerIndents {
 }

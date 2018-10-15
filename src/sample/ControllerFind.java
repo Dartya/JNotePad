@@ -1,4 +1,4 @@
-package sample.Controllers;
+package sample;
 
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
@@ -17,6 +17,7 @@ public class ControllerFind {
     public Button cancelTextFindButton;
 
     public void textFindOkButtonAction(ActionEvent actionEvent) {
+        System.out.println("null");
         if ((searchTextField.getText() == null) )
             DialogManager.showInfoDialog("Ошибка!", "Введите текст дял поиска!");
     }

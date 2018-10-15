@@ -1,4 +1,4 @@
-package sample.Controllers;
+package sample;
 
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
