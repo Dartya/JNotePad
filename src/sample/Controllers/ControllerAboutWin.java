@@ -1,4 +1,4 @@
-package sample;
+package sample.Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
@@ -13,5 +13,6 @@ public class ControllerAboutWin {
         Node source = (Node)actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
+
     }
 }
