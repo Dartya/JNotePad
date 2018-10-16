@@ -8,10 +8,11 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+    private static final String FXML_MAIN = "sample.fxml";
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource(FXML_MAIN));
         primaryStage.setTitle("JNotePad");
         primaryStage.setMinHeight(300);
         primaryStage.setMinWidth(610);
