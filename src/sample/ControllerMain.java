@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,10 +19,15 @@ import java.io.IOException;
 public class ControllerMain {
 
     //главное окно
+    @FXML
     public Button leftButton;
+    @FXML
     public Button centerButton;
+    @FXML
     public Button rightButton;
+    @FXML
     public TextArea textAreaOne;
+    @FXML
     public MenuItem findMenuItem;
     public ObservableList<String> fontTypesList = FXCollections.observableList(Font.getFontNames()); //ObservableList - обертка для List
     public ObservableList<Integer> fontSizesList = FXCollections.observableArrayList(
@@ -33,9 +39,13 @@ public class ControllerMain {
     public ObservableList<String> stylesList = FXCollections.observableArrayList(
             "Стиль 1", "Стиль 2", "Стиль 3", "Стиль 4", "Стиль 5"
     );
+    @FXML
     public ComboBox fontChoice;
+    @FXML
     public ComboBox fontSizeComboBox;
+    @FXML
     public ComboBox fontColorComboBox;
+    @FXML
     public ComboBox styleComboBox;
 
     public String result;
