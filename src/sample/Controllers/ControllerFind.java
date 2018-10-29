@@ -1,6 +1,7 @@
-package sample;
+package sample.Controllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -23,6 +24,7 @@ public class ControllerFind {
         if (text.equals("")){
             DialogManager.showInfoDialog("Ошибка!", "Введите текст для поиска!");
         }
+
     }
 
     public void textFindCancelButtonAction(ActionEvent actionEvent) {

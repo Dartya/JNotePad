@@ -19,6 +19,8 @@ import java.io.IOException;
 public class ControllerMain {
 
     //главное окно
+    private ControllerMain children;  // Ссылка на контроллер поражаемой формы
+    private ControllerMain parent;     // Ссылка на родительский контроллер (если таковой есть для данной формы)
     @FXML
     public Button leftButton;
     @FXML
@@ -81,10 +83,46 @@ public class ControllerMain {
 
     public void createFileAction(ActionEvent actionEvent) {
         System.out.println("Creating a new file...");
+        try{
+            Stage stageFind = new Stage();
+            FXMLLoader loader = new FXMLLoader();
+            Parent root = loader.load(getClass().getResource("FXML/newFileWin.fxml"));
+            stageFind.setTitle("Создать файл");
+            stageFind.setMinHeight(400);
+            stageFind.setMinWidth(530);
+            stageFind.setResizable(false);
+            stageFind.setScene(new Scene(root));
+            stageFind.getIcons().add(new Image("image/file.png"));
+            stageFind.initModality(Modality.APPLICATION_MODAL);
+            //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
+            //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
+            //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
+            stageFind.showAndWait();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void openAction(ActionEvent actionEvent) {
+        try{
         System.out.println("Initial opening a file...");
+        Stage stageFind = new Stage();
+        FXMLLoader loader = new FXMLLoader();
+        Parent root = loader.load(getClass().getResource("FXML/newFileWin.fxml"));
+        stageFind.setTitle("Открыть файл");
+        stageFind.setMinHeight(400);
+        stageFind.setMinWidth(530);
+        stageFind.setResizable(false);
+        stageFind.setScene(new Scene(root));
+        stageFind.getIcons().add(new Image("image/file.png"));
+        stageFind.initModality(Modality.APPLICATION_MODAL);
+        //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
+        //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
+        //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
+        stageFind.showAndWait();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void saveAction(ActionEvent actionEvent) {
@@ -93,6 +131,25 @@ public class ControllerMain {
 
     public void saveAsAction(ActionEvent actionEvent) {
         System.out.println("Initial saving the file...");
+        try{
+            System.out.println("Initial opening a file...");
+            Stage stageFind = new Stage();
+            FXMLLoader loader = new FXMLLoader();
+            Parent root = loader.load(getClass().getResource("FXML/newFileWin.fxml"));
+            stageFind.setTitle("Сохранить файл как...");
+            stageFind.setMinHeight(400);
+            stageFind.setMinWidth(530);
+            stageFind.setResizable(false);
+            stageFind.setScene(new Scene(root));
+            stageFind.getIcons().add(new Image("image/file.png"));
+            stageFind.initModality(Modality.APPLICATION_MODAL);
+            //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
+            //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
+            //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
+            stageFind.showAndWait();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void exitAction(ActionEvent actionEvent) {
@@ -100,11 +157,41 @@ public class ControllerMain {
     }
 
     public void fontChooseAction(ActionEvent actionEvent) {
-
+        try{
+            Stage stageFind = new Stage();
+            FXMLLoader loader = new FXMLLoader();
+            Parent root = loader.load(getClass().getResource("FXML/FontSettingsWin.fxml"));
+            stageFind.setTitle("Шрифт");
+            stageFind.setResizable(false);
+            stageFind.setScene(new Scene(root));
+            stageFind.getIcons().add(new Image("image/file.png"));
+            stageFind.initModality(Modality.APPLICATION_MODAL);
+            //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
+            //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
+            //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
+            stageFind.showAndWait();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void indentsAction(ActionEvent actionEvent) {
-
+        try{
+            Stage stageFind = new Stage();
+            FXMLLoader loader = new FXMLLoader();
+            Parent root = loader.load(getClass().getResource("FXML/indents.fxml"));
+            stageFind.setTitle("Отступы");
+            stageFind.setResizable(false);
+            stageFind.setScene(new Scene(root));
+            stageFind.getIcons().add(new Image("image/file.png"));
+            stageFind.initModality(Modality.APPLICATION_MODAL);
+            //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
+            //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
+            //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
+            stageFind.showAndWait();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void wordWrapAction(ActionEvent actionEvent) {
@@ -118,7 +205,7 @@ public class ControllerMain {
     public void aboutWinAction(ActionEvent actionEvent) {
         try {
             Stage aboutstage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("about_win.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("FXML/about_win.fxml"));
             aboutstage.setTitle("О программе");
             aboutstage.setMinHeight(200);
             aboutstage.setMinWidth(150);
@@ -175,7 +262,8 @@ public class ControllerMain {
     public void findAction(ActionEvent actionEvent) {
         try {
             Stage stageFind = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("find_win.fxml"));
+            FXMLLoader loader = new FXMLLoader();
+            Parent root = loader.load(getClass().getResource("FXML/find_win.fxml"));
             stageFind.setTitle("Найти");
             stageFind.setMinHeight(200);
             stageFind.setMinWidth(150);
