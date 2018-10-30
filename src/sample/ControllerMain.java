@@ -274,7 +274,7 @@ public class ControllerMain {
             //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
             //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
             //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
-            stageFind.showAndWait();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
+            stageFind.show();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
 
         } catch (IOException e) {
             e.printStackTrace();
