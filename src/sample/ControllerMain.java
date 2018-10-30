@@ -11,9 +11,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.text.Font;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 public class ControllerMain {
@@ -83,7 +85,9 @@ public class ControllerMain {
 
     public void createFileAction(ActionEvent actionEvent) {
         System.out.println("Creating a new file...");
-        try{
+        FileChooser fileChooser = new FileChooser();
+        File selectedFile = fileChooser.showOpenDialog(null);
+        /*try{
             Stage stageFind = new Stage();
             FXMLLoader loader = new FXMLLoader();
             Parent root = loader.load(getClass().getResource("FXML/newFileWin.fxml"));
@@ -98,9 +102,10 @@ public class ControllerMain {
             //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
             //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
             stageFind.showAndWait();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
+
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     public void openAction(ActionEvent actionEvent) {
