@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ControllerIndents">
    <children>
       <HBox prefHeight="50.0" prefWidth="400.0">
          <children>
@@ -30,124 +30,131 @@
          <children>
             <Label text="Слева">
                <HBox.margin>
-                  <Insets left="15.0" />
-               </HBox.margin></Label>
+                  <Insets left="15.0"/>
+               </HBox.margin>
+            </Label>
             <TextField fx:id="leftIndent" prefHeight="25.0" prefWidth="40.0">
                <HBox.margin>
-                  <Insets left="10.0" right="2.0" />
-               </HBox.margin></TextField>
+                  <Insets left="10.0" right="2.0"/>
+               </HBox.margin>
+            </TextField>
             <VBox maxHeight="25.0" maxWidth="25.0" prefHeight="25.0" prefWidth="25.0">
                <children>
-                  <Button mnemonicParsing="false">
+                  <Button fx:id="leftIndentUpButton" mnemonicParsing="false" onAction="#leftIndentUpAction">
                      <graphic>
-                        <ImageView fx:id="leftIndentUpButton" fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../image/up.png" />
+                              <Image url="@../../image/up.png"/>
                            </image>
                         </ImageView>
                      </graphic>
                      <font>
-                        <Font size="1.0" />
-                     </font></Button>
-                  <Button mnemonicParsing="false">
+                        <Font size="1.0"/>
+                     </font>
+                  </Button>
+                  <Button fx:id="leftIndentDownButton" mnemonicParsing="false" onAction="#leftIndentDownAction">
                      <font>
-                        <Font size="1.0" />
+                        <Font size="1.0"/>
                      </font>
                      <graphic>
-                        <ImageView fx:id="leftIndentDownButton" fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../image/down.png" />
+                              <Image url="@../../image/down.png"/>
                            </image>
                         </ImageView>
                      </graphic>
                      <VBox.margin>
-                        <Insets top="1.0" />
-                     </VBox.margin></Button>
+                        <Insets top="1.0"/>
+                     </VBox.margin>
+                  </Button>
                </children>
             </VBox>
             <Label text="Красная строка">
                <HBox.margin>
-                  <Insets left="10.0" right="10.0" />
-               </HBox.margin></Label>
+                  <Insets left="10.0" right="10.0"/>
+               </HBox.margin>
+            </Label>
             <TextField fx:id="redRowIndent" prefHeight="25.0" prefWidth="40.0">
                <HBox.margin>
-                  <Insets right="2.0" />
-               </HBox.margin></TextField>
+                  <Insets right="2.0"/>
+               </HBox.margin>
+            </TextField>
             <VBox maxHeight="25.0" maxWidth="2.0" prefHeight="25.0" prefWidth="25.0">
                <children>
-                  <Button mnemonicParsing="false">
+                  <Button fx:id="redRowIndentUpButton" mnemonicParsing="false" onAction="#redRowIndentUpButton">
                      <font>
-                        <Font size="1.0" />
+                        <Font size="1.0"/>
                      </font>
                      <graphic>
-                        <ImageView fx:id="redRowIndentUpButton" fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../image/up.png" />
+                              <Image url="@../../image/up.png"/>
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false">
+                  <Button fx:id="redRowIndentDownButton" mnemonicParsing="false" onAction="#redRowIndentDownAction">
                      <font>
-                        <Font size="1.0" />
+                        <Font size="1.0"/>
                      </font>
                      <graphic>
-                        <ImageView fx:id="redRowIndentDownButton" fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../image/down.png" />
+                              <Image url="@../../image/down.png"/>
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
                </children>
             </VBox>
-         </children></HBox>
-      <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="400.0">
-         <children>
+
             <Label text="Справа">
                <HBox.margin>
-                  <Insets left="15.0" />
-               </HBox.margin></Label>
+                  <Insets left="15.0"/>
+               </HBox.margin>
+            </Label>
             <TextField fx:id="rightIndent" prefHeight="25.0" prefWidth="40.0">
                <HBox.margin>
-                  <Insets left="3.0" right="2.0" />
-               </HBox.margin></TextField>
+                  <Insets left="3.0" right="2.0"/>
+               </HBox.margin>
+            </TextField>
             <VBox maxHeight="25.0" maxWidth="25.0" prefHeight="25.0" prefWidth="25.0">
                <children>
-                  <Button mnemonicParsing="false">
+                  <Button fx:id="rightIndentUpButton" mnemonicParsing="false" onAction="#rightIndentUpAction">
                      <font>
-                        <Font size="1.0" />
+                        <Font size="1.0"/>
                      </font>
                      <graphic>
-                        <ImageView fx:id="rightIndentUpButton" fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../image/up.png" />
+                              <Image url="@../../image/up.png"/>
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button mnemonicParsing="false">
+                  <Button fx:id="rightIndentDownButton" mnemonicParsing="false" onAction="#rightIndentDownAction">
                      <font>
-                        <Font size="1.0" />
+                        <Font size="1.0"/>
                      </font>
                      <graphic>
-                        <ImageView fx:id="rightIndentDownButton" fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../image/down.png" />
+                              <Image url="@../../image/down.png"/>
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
                </children>
             </VBox>
-         </children></HBox>
+         </children>
+      </HBox>
       <HBox alignment="CENTER" prefHeight="50.0" prefWidth="400.0">
          <children>
-            <Button fx:id="okButton" defaultButton="true" mnemonicParsing="false" prefWidth="60.0" text="OK">
+            <Button fx:id="okButton" defaultButton="true" mnemonicParsing="false" onAction="#okAction" prefWidth="60.0" text="OK">
                <HBox.margin>
                   <Insets right="30.0" />
                </HBox.margin></Button>
-            <Button fx:id="cancelButton" cancelButton="true" mnemonicParsing="false" prefWidth="60.0" text="Отмена" />
+            <Button fx:id="cancelButton" cancelButton="true" mnemonicParsing="false" onAction="#cancelAction" prefWidth="60.0" text="Отмена" />
          </children></HBox>
    </children>
 </VBox>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="150.0" maxWidth="400.0" minHeight="220.0" minWidth="400.0" prefHeight="130.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ControllerWarpWords">
+    <children>
+      <VBox maxHeight="20.0" maxWidth="1.7976931348623157E308" minHeight="75.0" prefHeight="70.0" prefWidth="100.0">
+         <children>
+              <Label fx:id="findTextLabel" text="Текст для поиска:">
+                  <VBox.margin>
+                      <Insets bottom="10.0" left="40.0" right="20.0" top="20.0" />
+                  </VBox.margin>
+                  <font>
+                      <Font size="14.0" />
+                  </font>
+              </Label>
+              <TextField fx:id="searchTextField">
+                  <VBox.margin>
+                      <Insets left="40.0" right="40.0" />
+                  </VBox.margin>
+              </TextField>
+         </children>
+      </VBox>
+      <VBox maxHeight="50.0" minHeight="75.0" prefHeight="100.0" prefWidth="100.0">
+         <children>
+            <Label fx:id="replaceTextLabel" text="Текст для замены:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="40.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="replaceTextField">
+               <VBox.margin>
+                  <Insets left="40.0" right="40.0" />
+               </VBox.margin>
+            </TextField>
+         </children>
+      </VBox>
+        <HBox alignment="CENTER" maxHeight="75.0" minHeight="50.0" prefHeight="50.0" prefWidth="400.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Button fx:id="okTextFindButton" defaultButton="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="OK" textAlignment="CENTER">
+                    <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="cancelTextFindButton" cancelButton="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Отмена" textAlignment="CENTER">
+                    <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</VBox>

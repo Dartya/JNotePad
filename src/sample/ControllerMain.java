@@ -6,17 +6,22 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.print.PrinterJob;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.text.Font;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ControllerMain {
 
@@ -84,50 +89,59 @@ public class ControllerMain {
     }
 
     public void createFileAction(ActionEvent actionEvent) {
-        System.out.println("Creating a new file...");
-        FileChooser fileChooser = new FileChooser();
-        File selectedFile = fileChooser.showOpenDialog(null);
-        /*try{
-            Stage stageFind = new Stage();
-            FXMLLoader loader = new FXMLLoader();
-            Parent root = loader.load(getClass().getResource("FXML/newFileWin.fxml"));
-            stageFind.setTitle("Создать файл");
-            stageFind.setMinHeight(400);
-            stageFind.setMinWidth(530);
-            stageFind.setResizable(false);
-            stageFind.setScene(new Scene(root));
-            stageFind.getIcons().add(new Image("image/file.png"));
-            stageFind.initModality(Modality.APPLICATION_MODAL);
-            //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
-            //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
-            //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
-            stageFind.showAndWait();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
     }
 
     public void openAction(ActionEvent actionEvent) {
-        try{
-        System.out.println("Initial opening a file...");
-        Stage stageFind = new Stage();
-        FXMLLoader loader = new FXMLLoader();
-        Parent root = loader.load(getClass().getResource("FXML/newFileWin.fxml"));
-        stageFind.setTitle("Открыть файл");
-        stageFind.setMinHeight(400);
-        stageFind.setMinWidth(530);
-        stageFind.setResizable(false);
-        stageFind.setScene(new Scene(root));
-        stageFind.getIcons().add(new Image("image/file.png"));
-        stageFind.initModality(Modality.APPLICATION_MODAL);
-        //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
-        //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
-        //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
-        stageFind.showAndWait();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
-        } catch (IOException e) {
-            e.printStackTrace();
+        /*
+        System.out.println("Creating a new file...");
+        FileChooser fileChooser = new FileChooser();
+        // Set title for FileChooser
+        fileChooser.setTitle("Открытие файла...");
+        // Set Initial Directory
+        //fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+        fileChooser.getExtensionFilters().addAll(//
+                new FileChooser.ExtensionFilter("Все файлы", "*.*"),
+                new FileChooser.ExtensionFilter("TXT", "*.txt"));
+        File selectedFile = fileChooser.showOpenDialog(null);
+        */
+        FileChooser fileChooser = new FileChooser();
+
+        //Set extension filter
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+        //Show save file dialog
+        File file = fileChooser.showOpenDialog(null);
+        if(file != null){
+            textAreaOne.setText(readFile(file));
         }
+    }
+    //метод чтения файла
+    private String readFile(File file){
+        StringBuilder stringBuffer = new StringBuilder();
+        BufferedReader bufferedReader = null;
+
+        try {
+            bufferedReader = new BufferedReader(new FileReader(file));
+
+            String text;
+            while ((text = bufferedReader.readLine()) != null) {
+                stringBuffer.append(text);
+            }
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ControllerMain.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ControllerMain.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                bufferedReader.close();
+            } catch (IOException ex) {
+                Logger.getLogger(ControllerMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return stringBuffer.toString();
     }
 
     public void saveAction(ActionEvent actionEvent) {
@@ -135,26 +149,32 @@ public class ControllerMain {
     }
 
     public void saveAsAction(ActionEvent actionEvent) {
-        System.out.println("Initial saving the file...");
-        try{
-            System.out.println("Initial opening a file...");
-            Stage stageFind = new Stage();
-            FXMLLoader loader = new FXMLLoader();
-            Parent root = loader.load(getClass().getResource("FXML/newFileWin.fxml"));
-            stageFind.setTitle("Сохранить файл как...");
-            stageFind.setMinHeight(400);
-            stageFind.setMinWidth(530);
-            stageFind.setResizable(false);
-            stageFind.setScene(new Scene(root));
-            stageFind.getIcons().add(new Image("image/file.png"));
-            stageFind.initModality(Modality.APPLICATION_MODAL);
-            //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
-            //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
-            //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
-            stageFind.showAndWait();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
-        } catch (IOException e) {
-            e.printStackTrace();
+        FileChooser fileChooser = new FileChooser();
+
+        //Set extension filter
+        FileChooser.ExtensionFilter extFilter =
+                new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+        //Show save file dialog
+        File file = fileChooser.showSaveDialog(null);
+
+        if(file != null){
+            SaveFile(textAreaOne.getText(), file);
         }
+    }
+
+    private void SaveFile(String content, File file){
+        try {
+            FileWriter fileWriter = null;
+
+            fileWriter = new FileWriter(file);
+            fileWriter.write(content);
+            fileWriter.close();
+        } catch (IOException ex) {
+            Logger.getLogger(ControllerMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     public void exitAction(ActionEvent actionEvent) {
@@ -233,27 +253,46 @@ public class ControllerMain {
     }
 
     public void cancelAction(ActionEvent actionEvent) {
-
+        textAreaOne.undo();
     }
 
     public void cutAction(ActionEvent actionEvent) {
-
+        textAreaOne.cut();
     }
 
     public void copyAction(ActionEvent actionEvent) {
-
+        textAreaOne.copy();
     }
 
     public void pasteAction(ActionEvent actionEvent) {
-
+        textAreaOne.paste();
     }
 
     public void deleteAction(ActionEvent actionEvent) {
-
+        IndexRange range = textAreaOne.getSelection();
+        textAreaOne.deleteText(range.getStart(), range.getEnd());
     }
 
     public void replaceAction(ActionEvent actionEvent) {
+        try {
+            Stage stageFind = new Stage();
+            FXMLLoader loader = new FXMLLoader();
+            Parent root = loader.load(getClass().getResource("FXML/warpWords.fxml"));
+            stageFind.setTitle("Заменить");
+            stageFind.setMinHeight(200);
+            stageFind.setMinWidth(220);
+            stageFind.setResizable(false);
+            stageFind.setScene(new Scene(root));
+            stageFind.getIcons().add(new Image("image/search.png"));
+            stageFind.initModality(Modality.APPLICATION_MODAL);
+            //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
+            //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
+            //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
+            stageFind.show();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void highliteAction(ActionEvent actionEvent) {
@@ -261,7 +300,8 @@ public class ControllerMain {
     }
 
     public void insertDataAction(ActionEvent actionEvent) {
-
+        textAreaOne.appendText(new Date().toString());
+        textAreaOne.appendText("\n");
     }
 
     public void findAction(ActionEvent actionEvent) {
