@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox minHeight="370.0" prefHeight="426.0" prefWidth="600.0">
+         <children>
+            <ListView maxHeight="1.7976931348623157E308" minHeight="200.0" minWidth="170.0" prefHeight="200.0" prefWidth="200.0" />
+            <WebView minHeight="370.0" minWidth="400.0" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

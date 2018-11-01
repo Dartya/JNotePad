@@ -100,7 +100,7 @@
             <items>
               <MenuItem mnemonicParsing="false" onAction="#fontChooseAction" text="Шрифт" />
                   <MenuItem mnemonicParsing="false" onAction="#indentsAction" text="Отступы" />
-                  <MenuItem mnemonicParsing="false" onAction="#wordWrapAction" text="Перенос по словам" />
+                  <RadioMenuItem mnemonicParsing="false" onAction="#wordWrapAction" text="Перенос по словам" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Справка">

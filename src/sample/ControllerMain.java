@@ -58,6 +58,7 @@ public class ControllerMain {
     public ComboBox styleComboBox;
 
     public String result;
+    boolean wraptext = false;
 
     public void initialize(){
         fontChoice.setItems(fontTypesList);
@@ -220,6 +221,8 @@ public class ControllerMain {
     }
 
     public void wordWrapAction(ActionEvent actionEvent) {
+        wraptext = !(wraptext);
+        textAreaOne.setWrapText(wraptext);
 
     }
 
