@@ -30,12 +30,12 @@
          <children>
             <Label text="Слева">
                <HBox.margin>
-                  <Insets left="15.0"/>
+                  <Insets left="15.0" />
                </HBox.margin>
             </Label>
             <TextField fx:id="leftIndent" prefHeight="25.0" prefWidth="40.0">
                <HBox.margin>
-                  <Insets left="10.0" right="2.0"/>
+                  <Insets left="10.0" right="2.0" />
                </HBox.margin>
             </TextField>
             <VBox maxHeight="25.0" maxWidth="25.0" prefHeight="25.0" prefWidth="25.0">
@@ -44,102 +44,106 @@
                      <graphic>
                         <ImageView fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../image/up.png"/>
+                              <Image url="@../../image/up.png" />
                            </image>
                         </ImageView>
                      </graphic>
                      <font>
-                        <Font size="1.0"/>
+                        <Font size="1.0" />
                      </font>
                   </Button>
                   <Button fx:id="leftIndentDownButton" mnemonicParsing="false" onAction="#leftIndentDownAction">
                      <font>
-                        <Font size="1.0"/>
+                        <Font size="1.0" />
                      </font>
                      <graphic>
                         <ImageView fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../image/down.png"/>
+                              <Image url="@../../image/down.png" />
                            </image>
                         </ImageView>
                      </graphic>
                      <VBox.margin>
-                        <Insets top="1.0"/>
+                        <Insets top="1.0" />
                      </VBox.margin>
                   </Button>
                </children>
             </VBox>
             <Label text="Красная строка">
                <HBox.margin>
-                  <Insets left="10.0" right="10.0"/>
+                  <Insets left="10.0" right="10.0" />
                </HBox.margin>
             </Label>
             <TextField fx:id="redRowIndent" prefHeight="25.0" prefWidth="40.0">
                <HBox.margin>
-                  <Insets right="2.0"/>
+                  <Insets right="2.0" />
                </HBox.margin>
             </TextField>
             <VBox maxHeight="25.0" maxWidth="2.0" prefHeight="25.0" prefWidth="25.0">
                <children>
                   <Button fx:id="redRowIndentUpButton" mnemonicParsing="false" onAction="#redRowIndentUpButton">
                      <font>
-                        <Font size="1.0"/>
+                        <Font size="1.0" />
                      </font>
                      <graphic>
                         <ImageView fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../image/up.png"/>
+                              <Image url="@../../image/up.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
                   <Button fx:id="redRowIndentDownButton" mnemonicParsing="false" onAction="#redRowIndentDownAction">
                      <font>
-                        <Font size="1.0"/>
+                        <Font size="1.0" />
                      </font>
                      <graphic>
                         <ImageView fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../image/down.png"/>
+                              <Image url="@../../image/down.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
                </children>
             </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="400.0">
+         <children>
 
             <Label text="Справа">
                <HBox.margin>
-                  <Insets left="15.0"/>
+                  <Insets left="15.0" />
                </HBox.margin>
             </Label>
             <TextField fx:id="rightIndent" prefHeight="25.0" prefWidth="40.0">
                <HBox.margin>
-                  <Insets left="3.0" right="2.0"/>
+                  <Insets left="3.0" right="2.0" />
                </HBox.margin>
             </TextField>
             <VBox maxHeight="25.0" maxWidth="25.0" prefHeight="25.0" prefWidth="25.0">
                <children>
                   <Button fx:id="rightIndentUpButton" mnemonicParsing="false" onAction="#rightIndentUpAction">
                      <font>
-                        <Font size="1.0"/>
+                        <Font size="1.0" />
                      </font>
                      <graphic>
                         <ImageView fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../image/up.png"/>
+                              <Image url="@../../image/up.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
                   <Button fx:id="rightIndentDownButton" mnemonicParsing="false" onAction="#rightIndentDownAction">
                      <font>
-                        <Font size="1.0"/>
+                        <Font size="1.0" />
                      </font>
                      <graphic>
                         <ImageView fitHeight="10.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../image/down.png"/>
+                              <Image url="@../../image/down.png" />
                            </image>
                         </ImageView>
                      </graphic>

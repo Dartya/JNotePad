@@ -6,7 +6,7 @@ import javafx.scene.web.WebView;
 
 public class ControllerManualWin {
     public javafx.scene.web.WebView WebView ;
-    public javafx.scene.control.TreeView TreeView;
+    public javafx.scene.control.TreeView<String> TreeView;
 
     public void initialize(){
         // определяем корневой узел
@@ -33,7 +33,7 @@ public class ControllerManualWin {
         rootTreeNode.getChildren().add(languages);
 
         // устанавливаем корневой узел для TreeView
-
+        TreeView = new TreeView<String>(rootTreeNode);
     }
 
 }

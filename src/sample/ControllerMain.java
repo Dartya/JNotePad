@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
@@ -203,18 +204,18 @@ public class ControllerMain {
 
     public void indentsAction(ActionEvent actionEvent) {
         try{
-            Stage stageFind = new Stage();
+            Stage stageIndents = new Stage();
             FXMLLoader loader = new FXMLLoader();
             Parent root = loader.load(getClass().getResource("FXML/indents.fxml"));
-            stageFind.setTitle("Отступы");
-            stageFind.setResizable(false);
-            stageFind.setScene(new Scene(root));
-            stageFind.getIcons().add(new Image("image/file.png"));
-            stageFind.initModality(Modality.APPLICATION_MODAL);
+            stageIndents.setTitle("Отступы");
+            stageIndents.setResizable(false);
+            stageIndents.setScene(new Scene(root));
+            stageIndents.getIcons().add(new Image("image/file.png"));
+            stageIndents.initModality(Modality.NONE);
             //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
             //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
             //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
-            stageFind.showAndWait();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
+            stageIndents.show();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -227,7 +228,21 @@ public class ControllerMain {
     }
 
     public void manualWinAction(ActionEvent actionEvent) {
-
+        try {
+            Stage aboutstage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("FXML/manualWin.fxml"));
+            aboutstage.setTitle("Справка");
+            aboutstage.setResizable(false);
+            aboutstage.setScene(new Scene(root));
+            aboutstage.getIcons().add(new Image("image/file.png"));
+            aboutstage.initModality(Modality.NONE);
+            //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
+            //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
+            //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
+            aboutstage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void aboutWinAction(ActionEvent actionEvent) {
@@ -278,20 +293,20 @@ public class ControllerMain {
 
     public void replaceAction(ActionEvent actionEvent) {
         try {
-            Stage stageFind = new Stage();
+            Stage stageReplace = new Stage();
             FXMLLoader loader = new FXMLLoader();
             Parent root = loader.load(getClass().getResource("FXML/warpWords.fxml"));
-            stageFind.setTitle("Заменить");
-            stageFind.setMinHeight(200);
-            stageFind.setMinWidth(220);
-            stageFind.setResizable(false);
-            stageFind.setScene(new Scene(root));
-            stageFind.getIcons().add(new Image("image/search.png"));
-            stageFind.initModality(Modality.APPLICATION_MODAL);
+            stageReplace.setTitle("Заменить");
+            stageReplace.setMinHeight(200);
+            stageReplace.setMinWidth(220);
+            stageReplace.setResizable(false);
+            stageReplace.setScene(new Scene(root));
+            stageReplace.getIcons().add(new Image("image/search.png"));
+            stageReplace.initModality(Modality.NONE);   //не модальнео окно
             //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
             //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
             //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
-            stageFind.show();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
+            stageReplace.show();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -318,7 +333,7 @@ public class ControllerMain {
             stageFind.setResizable(false);
             stageFind.setScene(new Scene(root));
             stageFind.getIcons().add(new Image("image/search.png"));
-            stageFind.initModality(Modality.APPLICATION_MODAL);
+            stageFind.initModality(Modality.NONE);
             //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
             //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
             //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);

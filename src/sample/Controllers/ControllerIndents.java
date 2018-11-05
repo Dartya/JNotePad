@@ -23,4 +23,28 @@ public class ControllerIndents {
     public void leftIndentDownAction(ActionEvent actionEvent) {
 
     }
+
+    public void redRowIndentUpButton(ActionEvent actionEvent) {
+
+    }
+
+    public void redRowIndentDownAction(ActionEvent actionEvent) {
+
+    }
+
+    public void rightIndentUpAction(ActionEvent actionEvent) {
+
+    }
+
+    public void rightIndentDownAction(ActionEvent actionEvent) {
+
+    }
+
+    public void okAction(ActionEvent actionEvent) {
+
+    }
+
+    public void cancelAction(ActionEvent actionEvent) {
+
+    }
 }
