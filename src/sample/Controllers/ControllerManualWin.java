@@ -1,39 +1,44 @@
 package sample.Controllers;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.web.WebView;
+import javafx.scene.control.MultipleSelectionModel;
 
 public class ControllerManualWin {
-    public javafx.scene.web.WebView WebView ;
-    public javafx.scene.control.TreeView<String> TreeView;
+    public WebView WebView ;
+    private TreeItem<String> rootTreeNode;
+    @FXML TreeView<String> treeView;
 
     public void initialize(){
         // определяем корневой узел
-        TreeItem<String> rootTreeNode = new TreeItem<String>("Справка");
+        rootTreeNode = new TreeItem<>("Справка");
 
         // определяем набор вложенных узлов
-        TreeItem<String> common = new TreeItem<String>("Общие сведения о программе");
-        common.getChildren().add(new TreeItem<String>("Поиск символов или слов"));
-        common.getChildren().add(new TreeItem<String>("Поиск и замена символов или слов"));
-        common.getChildren().add(new TreeItem<String>("Включение режима переноса слов"));
-        common.getChildren().add(new TreeItem<String>("Переход к конкретной строке"));
-        common.getChildren().add(new TreeItem<String>("Вырезание, копирование, вставка"));
-        common.getChildren().add(new TreeItem<String>("Измерение способа отображения"));
-        common.getChildren().add(new TreeItem<String>("Печать документа"));
-        common.getChildren().add(new TreeItem<String>("Вставка в документ времени и даты"));
-        common.getChildren().add(new TreeItem<String>("Ведение журнала использования данных"));
+        TreeItem<String> common = new TreeItem<>("Общие сведения о программе");
+        common.getChildren().add(new TreeItem<>("Поиск символов или слов"));
+        common.getChildren().add(new TreeItem<>("Поиск и замена символов или слов"));
+        common.getChildren().add(new TreeItem<>("Включение режима переноса слов"));
+        common.getChildren().add(new TreeItem<>("Переход к конкретной строке"));
+        common.getChildren().add(new TreeItem<>("Вырезание, копирование, вставка"));
+        common.getChildren().add(new TreeItem<>("Изменение способа отображения"));
+        common.getChildren().add(new TreeItem<>("Печать документа"));
+        common.getChildren().add(new TreeItem<>("Вставка в документ времени и даты"));
+        common.getChildren().add(new TreeItem<>("Ведение журнала использования данных"));
 
-        TreeItem<String> languages = new TreeItem<String>("Использование различных языков");
-        languages.getChildren().add(new TreeItem<String>("Русский"));
-        languages.getChildren().add(new TreeItem<String>("Английский"));
+        TreeItem<String> languages = new TreeItem<>("Использование различных языков");
+        languages.getChildren().add(new TreeItem<>("Русский"));
+        languages.getChildren().add(new TreeItem<>("Английский"));
 
         // добавляем узлы в корневой узел
         rootTreeNode.getChildren().add(common);
         rootTreeNode.getChildren().add(languages);
-
+        rootTreeNode.setExpanded(true);
         // устанавливаем корневой узел для TreeView
-        TreeView = new TreeView<String>(rootTreeNode);
+        treeView = new TreeView<>(rootTreeNode);
+        treeView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
 
 }

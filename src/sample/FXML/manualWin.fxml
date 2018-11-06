@@ -12,29 +12,38 @@
    <children>
       <HBox minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #AAAAAA;">
          <children>
-            <TabPane minHeight="595.0" minWidth="300.0" prefHeight="595.0" prefWidth="300.0">
-               <tabs>
-                  <Tab closable="false" text="Содержание">
-                     <content>
-                        <TreeView fx:id="TreeView" minHeight="565.0" minWidth="300.0" prefHeight="565.0" prefWidth="300.0" />
-                     </content>
-                  </Tab>
-                  <Tab closable="false" text="Указатель">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                    </content>
-                  </Tab>
-                  <Tab closable="false" text="Поиск">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                    </content>
-                  </Tab>
-               </tabs>
-            </TabPane>
-            <WebView fx:id="WebView" minHeight="590.0" minWidth="490.0" prefHeight="200.0" prefWidth="200.0">
-               <HBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </HBox.margin></WebView>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="300.0">
+               <children>
+                  <TabPane minHeight="595.0" minWidth="300.0" prefHeight="595.0" prefWidth="300.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <tabs>
+                        <Tab closable="false" text="Содержание">
+                           <content>
+                              <TreeView fx:id="treeView" minHeight="565.0" minWidth="300.0" prefHeight="565.0" prefWidth="300.0" />
+                           </content>
+                        </Tab>
+                        <Tab closable="false" text="Указатель">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          </content>
+                        </Tab>
+                        <Tab closable="false" text="Поиск">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0">
+               <children>
+                  <WebView fx:id="WebView" minHeight="590.0" minWidth="490.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </WebView>
+               </children>
+            </AnchorPane>
          </children>
       </HBox>
    </children>

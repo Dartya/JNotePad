@@ -31,7 +31,7 @@ public class ControllerFind extends ControllerMain {
         if (text.equals("")){
             DialogManager.showInfoDialog("Ошибка!", "Введите текст для поиска!");
         }
-        textAreaOne.setText(text);
+        else textAreaOne.setText(text);
     }
 
     public void textFindCancelButtonAction(ActionEvent actionEvent) {

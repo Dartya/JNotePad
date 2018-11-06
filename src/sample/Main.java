@@ -11,7 +11,9 @@ import java.io.IOException;
 
 public class Main extends Application {
     private static final String FXML_MAIN = "sample.fxml";
-
+    public static int leftIndent = 0;
+    public static int rightIndent = 0;
+    public static int redRowIndent = 0;
     private Stage primaryStage;             //сцена главного окна
     private ControllerMain mainController;  //контроллер сцены главного окна
     private FXMLLoader fxmlLoader;          //загрузчик файлов FXML

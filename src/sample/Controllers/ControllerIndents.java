@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import sample.Main;
 
 public class ControllerIndents {
     public TextField leftIndent;
@@ -28,9 +29,13 @@ public class ControllerIndents {
 
     //отступ слева
     public void initialize(){
-        leftIndent.setText("0");
-        rightIndent.setText("0");
-        redRowIndent.setText("0");
+        leftIndent.setText(Integer.toString(Main.leftIndent));
+        rightIndent.setText(Integer.toString(Main.rightIndent));
+        redRowIndent.setText(Integer.toString(Main.redRowIndent));
+
+        leftIndentInt = Main.leftIndent;
+        rightIndentInt = Main.rightIndent;
+        redRowIndentInt = Main.redRowIndent;
     }
 
     public void leftIndentUpAction(ActionEvent actionEvent) {
@@ -70,7 +75,13 @@ public class ControllerIndents {
     }
 
     public void okAction(ActionEvent actionEvent) {
+        Main.leftIndent = leftIndentInt;
+        Main.rightIndent = rightIndentInt;
+        Main.redRowIndent = redRowIndentInt;
 
+        Node source = (Node) actionEvent.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 
     public void cancelAction(ActionEvent actionEvent) {
