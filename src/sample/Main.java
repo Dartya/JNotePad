@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Main extends Application {
-    private static final String FXML_MAIN = "sample.fxml";
+    private static final String FXML_MAIN = "FXML/sample.fxml";
     public static int leftIndent = 0;
     public static int rightIndent = 0;
     public static int redRowIndent = 0;

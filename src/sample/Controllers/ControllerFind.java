@@ -5,13 +5,11 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import sample.Classes.DialogManager;
-import sample.ControllerMain;
 
-public class ControllerFind extends ControllerMain {
+public class ControllerFind {
 
     //окно "Найти"
     @FXML public TextField searchTextField;
@@ -20,7 +18,7 @@ public class ControllerFind extends ControllerMain {
     @FXML public Button cancelTextFindButton;
     private String text;
 
-    @Override
+
     public void initialize(){
         System.out.println("psvm");
     }
@@ -31,7 +29,7 @@ public class ControllerFind extends ControllerMain {
         if (text.equals("")){
             DialogManager.showInfoDialog("Ошибка!", "Введите текст для поиска!");
         }
-        else textAreaOne.setText(text);
+        //else textAreaOne.setText(text);
     }
 
     public void textFindCancelButtonAction(ActionEvent actionEvent) {
