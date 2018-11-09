@@ -18,6 +18,8 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import sample.Classes.WindowConstructor;
+import sample.Controllers.ControllerFind;
 
 import java.io.*;
 import java.util.Date;
@@ -26,9 +28,10 @@ import java.util.logging.Logger;
 
 public class ControllerMain {
 
+    //ссылки на контроллеры
+    private ControllerFind children;  // Ссылка на контроллер окна поиска текста
+
     //главное окно
-    private ControllerMain children;  // Ссылка на контроллер поражаемой формы
-    private ControllerMain parent;     // Ссылка на родительский контроллер (если таковой есть для данной формы)
     @FXML
     public Button leftButton;
     @FXML
@@ -326,7 +329,8 @@ public class ControllerMain {
         try {
             Stage stageFind = new Stage();
             FXMLLoader loader = new FXMLLoader();
-            Parent root = loader.load(getClass().getResource("FXML/find_win.fxml"));
+            loader.setLocation(getClass().getResource("FXML/find_win.fxml"));
+            Parent root = loader.load();
             stageFind.setTitle("Найти");
             stageFind.setMinHeight(200);
             stageFind.setMinWidth(150);
@@ -338,9 +342,12 @@ public class ControllerMain {
             //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
             //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
             stageFind.show();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
+            children = loader.getController();
+            children.setParent(this);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }

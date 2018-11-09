@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import sample.Classes.DialogManager;
 import sample.ControllerMain;
 
-public class ControllerFind extends ControllerMain {
+public class ControllerFind {
 
     //окно "Найти"
     @FXML public TextField searchTextField;
@@ -19,19 +19,40 @@ public class ControllerFind extends ControllerMain {
     @FXML public Button okTextFindButton;
     @FXML public Button cancelTextFindButton;
     private String text;
+    public ControllerMain controller;
 
-    @Override
-    public void initialize(){
+    public void setParent (ControllerMain controller){
+        this.controller = controller;
+    }
+
+    public ControllerFind getThis(){
+        return this;
+    }
+        public void initialize(){
         System.out.println("psvm");
     }
 
     public void textFindOkButtonAction(ActionEvent actionEvent) {
         System.out.println("Enter button...");
         text = (searchTextField.getText());
-        if (text.equals("")){
+        if (text.equals("")) {
             DialogManager.showInfoDialog("Ошибка!", "Введите текст для поиска!");
+        } else {
+            /*int index = controller.textAreaOne.getText().indexOf(controller.textAreaOne.getText());
+            controller.textAreaOne.selectRange(index, index + text.length());*/
+            if (controller.textAreaOne.getText() != null && !controller.textAreaOne.getText().isEmpty()) {
+                int index = controller.textAreaOne.getText().indexOf(text);
+                if (index == -1) {
+                    DialogManager.showInfoDialog("Результат", "Искомый текст отсутствует");
+                } else {
+                    //  errorText.setText("Found");
+                    controller.textAreaOne.selectRange(index, index + text.length());
+                }
+            } else {
+                DialogManager.showInfoDialog("Ошибка", "Отсутствует исходный текст");
+                //  errorText.setFill(Color.RED);
+            }
         }
-        else textAreaOne.setText(text);
     }
 
     public void textFindCancelButtonAction(ActionEvent actionEvent) {
