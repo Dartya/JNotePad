@@ -19,7 +19,7 @@ public class ControllerFind {
     @FXML public Button okTextFindButton;
     @FXML public Button cancelTextFindButton;
     private String text;
-    public ControllerMain controller;
+    private ControllerMain controller;
 
     public void setParent (ControllerMain controller){
         this.controller = controller;
@@ -28,35 +28,30 @@ public class ControllerFind {
     public ControllerFind getThis(){
         return this;
     }
-        public void initialize(){
+
+    public void initialize(){
         System.out.println("psvm");
     }
 
     public void textFindOkButtonAction(ActionEvent actionEvent) {
-        System.out.println("Enter button...");
         text = (searchTextField.getText());
         if (text.equals("")) {
             DialogManager.showInfoDialog("Ошибка!", "Введите текст для поиска!");
         } else {
-            /*int index = controller.textAreaOne.getText().indexOf(controller.textAreaOne.getText());
-            controller.textAreaOne.selectRange(index, index + text.length());*/
             if (controller.textAreaOne.getText() != null && !controller.textAreaOne.getText().isEmpty()) {
                 int index = controller.textAreaOne.getText().indexOf(text);
                 if (index == -1) {
                     DialogManager.showInfoDialog("Результат", "Искомый текст отсутствует");
                 } else {
-                    //  errorText.setText("Found");
                     controller.textAreaOne.selectRange(index, index + text.length());
                 }
             } else {
                 DialogManager.showInfoDialog("Ошибка", "Отсутствует исходный текст");
-                //  errorText.setFill(Color.RED);
             }
         }
     }
 
     public void textFindCancelButtonAction(ActionEvent actionEvent) {
-        System.out.println("Esc button...");
         Node source = (Node) actionEvent.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
