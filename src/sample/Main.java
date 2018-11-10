@@ -5,15 +5,26 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class Main extends Application {
     private static final String FXML_MAIN = "sample.fxml";
+
+    //параметры отступов
     public static int leftIndent = 0;
     public static int rightIndent = 0;
     public static int redRowIndent = 0;
+
+    //параметры текста textAreaOne
+    public static String currentFontFamily = "Times New Roman";
+    public static FontWeight currentFontWeight = FontWeight.NORMAL;
+    public static FontPosture currentFontPosture = FontPosture.REGULAR;
+    public static int currentFontSize = 12;
+
     private Stage primaryStage;             //сцена главного окна
     private ControllerMain mainController;  //контроллер сцены главного окна
     private FXMLLoader fxmlLoader;          //загрузчик файлов FXML

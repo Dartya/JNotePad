@@ -25,12 +25,8 @@ public class ControllerFind {
         this.controller = controller;
     }
 
-    public ControllerFind getThis(){
-        return this;
-    }
-
     public void initialize(){
-        System.out.println("psvm");
+        //controller.textAreaOne.setText("проверка");
     }
 
     public void textFindOkButtonAction(ActionEvent actionEvent) {

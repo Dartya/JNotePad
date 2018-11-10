@@ -14,12 +14,15 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import sample.Classes.WindowConstructor;
 import sample.Controllers.ControllerFind;
+import sample.Controllers.ControllerFontSettingsWin;
 
 import java.io.*;
 import java.util.Date;
@@ -30,7 +33,7 @@ public class ControllerMain {
 
     //ссылки на контроллеры
     private ControllerFind children;  // Ссылка на контроллер окна поиска текста
-
+    public ControllerFontSettingsWin childFontWin;
     //главное окно
     @FXML
     public Button leftButton;
@@ -42,7 +45,7 @@ public class ControllerMain {
     public TextArea textAreaOne;
     @FXML
     public MenuItem findMenuItem;
-    public ObservableList<String> fontTypesList = FXCollections.observableList(Font.getFontNames()); //ObservableList - обертка для List
+    public ObservableList<String> fontTypesList = FXCollections.observableList(Font.getFamilies()); //ObservableList - обертка для List
     public ObservableList<Integer> fontSizesList = FXCollections.observableArrayList(
             2, 4, 6, 8, 10, 12, 14, 16, 18, 32, 48, 72
     );
@@ -64,17 +67,31 @@ public class ControllerMain {
     public String result;
     boolean wraptext = false;
 
+    public String currentFontFamily;
+    public FontPosture currentFontPosture;
+    public FontWeight currentFontWeight;
+    public int currentFontSize;
+
+    public void setFontParams(){
+        currentFontFamily = Main.currentFontFamily;
+        currentFontPosture = Main.currentFontPosture;
+        currentFontWeight = Main.currentFontWeight;
+        currentFontSize = Main.currentFontSize;
+        textAreaOne.setFont(Font.font(currentFontFamily, currentFontWeight, currentFontPosture, currentFontSize));
+    }
+
     public void initialize(){
         fontChoice.setItems(fontTypesList);
-        fontChoice.setValue("Times New Roman");
+        fontChoice.setValue(Main.currentFontFamily);
         fontSizeComboBox.setItems(fontSizesList);
-        fontSizeComboBox.setValue(12);
+        fontSizeComboBox.setValue(Main.currentFontSize);
         fontSizeComboBox.setEditable(true);
         fontColorComboBox.setItems(fontColorsList);
         fontColorComboBox.setValue("Черный");
         styleComboBox.setItems(stylesList);
         styleComboBox.setValue("Стиль 1");
         styleComboBox.setEditable(true);
+        this.setFontParams();
     }
     public void leftAlignmentAction(ActionEvent actionEvent) {
         System.out.println("Button1");
@@ -188,18 +205,20 @@ public class ControllerMain {
 
     public void fontChooseAction(ActionEvent actionEvent) {
         try{
-            Stage stageFind = new Stage();
+            Stage stageFont = new Stage();
             FXMLLoader loader = new FXMLLoader();
-            Parent root = loader.load(getClass().getResource("FXML/FontSettingsWin.fxml"));
-            stageFind.setTitle("Шрифт");
-            stageFind.setResizable(false);
-            stageFind.setScene(new Scene(root));
-            stageFind.getIcons().add(new Image("image/file.png"));
-            stageFind.initModality(Modality.APPLICATION_MODAL);
-            //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
-            //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
-            //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
-            stageFind.showAndWait();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
+            loader.setLocation(getClass().getResource("FXML/FontSettingsWin.fxml"));
+            Parent root = loader.load();
+            stageFont.setTitle("Шрифт");
+            stageFont.setResizable(false);
+            stageFont.setScene(new Scene(root));
+            stageFont.getIcons().add(new Image("image/file.png"));
+            stageFont.initModality(Modality.APPLICATION_MODAL);
+            childFontWin = loader.getController();
+            childFontWin.setParent(this);
+            System.out.println(childFontWin.getClass().getName());
+            stageFont.showAndWait();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -215,10 +234,7 @@ public class ControllerMain {
             stageIndents.setScene(new Scene(root));
             stageIndents.getIcons().add(new Image("image/file.png"));
             stageIndents.initModality(Modality.NONE);
-            //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
-            //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
-            //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
-            stageIndents.show();    //зато используется этот метод в связке с stage.initModality(Modality.APPLICATION_MODAL);
+            stageIndents.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -236,13 +252,12 @@ public class ControllerMain {
             Parent root = FXMLLoader.load(getClass().getResource("FXML/manualWin.fxml"));
             aboutstage.setTitle("Справка");
             aboutstage.setResizable(true);
+            aboutstage.setMinWidth(660);
+            aboutstage.setMinHeight(450);
             aboutstage.setScene(new Scene(root));
             aboutstage.getIcons().add(new Image("image/file.png"));
             aboutstage.initModality(Modality.NONE);
-            //stage.initOwner(((Node)actionEvent.getSource()).getScene().getWindow());    //указывается родительское окно
-            //правда, данный метод инициализации родительского окна не работает с элеменами основного меню, поэтому
-            //stage.show();         //не используется в связке с stage.initModality(Modality.WINDOW_MODAL);
-            aboutstage.showAndWait();
+            aboutstage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -251,7 +266,9 @@ public class ControllerMain {
     public void aboutWinAction(ActionEvent actionEvent) {
         try {
             Stage aboutstage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("FXML/about_win.fxml"));
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("FXML/about_win.fxml"));
+            Parent root = loader.load();
             aboutstage.setTitle("О программе");
             aboutstage.setMinHeight(200);
             aboutstage.setMinWidth(150);

@@ -15,12 +15,25 @@ public class ControllerManualWin {
     private TreeItem<String> rootTreeNode;
     @FXML TreeView treeView;
     WebEngine webEngine;
+    URL url;
+
+    final String str1 = "Общие сведения о программе";
+    final String str2 = "Поиск символов или слов";
+    final String str3 = "Поиск и замена символов или слов";
+    final String str4 = "Включение режима переноса слов";
+    final String str5 = "Переход к конкретной строке";
+    final String str6 = "Вырезание, копирование, вставка";
+    final String str7 = "Печать документа";
+    final String str8 = "Вставка в документ времени и даты";
+    final String str9 = "Использование различных языков";
+    final String str10 = "Русский";
+    final String str11 = "Английский";
 
     public void initialize(){
         System.out.println("blabla");
         createTree();
         webEngine = WebView.getEngine();
-        webEngine.load("http://ru.investing.com");
+        showPage("/sample/Manuals/spravka.html");
     }
     private void createTree(){
         System.out.println("createTree method...");
@@ -28,20 +41,18 @@ public class ControllerManualWin {
         rootTreeNode = new TreeItem<>("Справка");
 
         // определяем набор вложенных узлов
-        TreeItem<String> common = new TreeItem<>("Общие сведения о программе");
-        common.getChildren().add(new TreeItem<>("Поиск символов или слов"));
-        common.getChildren().add(new TreeItem<>("Поиск и замена символов или слов"));
-        common.getChildren().add(new TreeItem<>("Включение режима переноса слов"));
-        common.getChildren().add(new TreeItem<>("Переход к конкретной строке"));
-        common.getChildren().add(new TreeItem<>("Вырезание, копирование, вставка"));
-        common.getChildren().add(new TreeItem<>("Изменение способа отображения"));
-        common.getChildren().add(new TreeItem<>("Печать документа"));
-        common.getChildren().add(new TreeItem<>("Вставка в документ времени и даты"));
-        common.getChildren().add(new TreeItem<>("Ведение журнала использования данных"));
+        TreeItem<String> common = new TreeItem<>(str1);
+        common.getChildren().add(new TreeItem<>(str2));
+        common.getChildren().add(new TreeItem<>(str3));
+        common.getChildren().add(new TreeItem<>(str4));
+        common.getChildren().add(new TreeItem<>(str5));
+        common.getChildren().add(new TreeItem<>(str6));
+        common.getChildren().add(new TreeItem<>(str7));
+        common.getChildren().add(new TreeItem<>(str8));
 
-        TreeItem<String> languages = new TreeItem<>("Использование различных языков");
-        languages.getChildren().add(new TreeItem<>("Русский"));
-        languages.getChildren().add(new TreeItem<>("Английский"));
+        TreeItem<String> languages = new TreeItem<>(str9);
+        languages.getChildren().add(new TreeItem<>(str10));
+        languages.getChildren().add(new TreeItem<>(str11));
 
         // добавляем узлы в корневой узел
         rootTreeNode.getChildren().add(common);
@@ -57,17 +68,48 @@ public class ControllerManualWin {
                 selectedItem = newValue.getValue();
 
                 switch (selectedItem) {
-                    case "Русский":
-                        System.out.println("русский");
-                        URL url = this.getClass().getResource("/sample/JavaFX _ TreeView.html");
-                        webEngine.load(url.toString());
-
+                    case str1:
+                        showPage("/sample/Manuals/str1.html");
                         break;
-                        default:
-                            System.out.println("дефолт");
-                            webEngine.load("http://google.com");
+                    case str2:
+                        showPage("/sample/Manuals/str2.html");
+                        break;
+                    case str3:
+                        showPage("/sample/Manuals/str3.html");
+                        break;
+                    case str4:
+                        showPage("/sample/Manuals/str4.html");
+                        break;
+                    case str5:
+                        showPage("/sample/Manuals/str5.html");
+                        break;
+                    case str6:
+                        showPage("/sample/Manuals/str6.html");
+                        break;
+                    case str7:
+                        showPage("/sample/Manuals/str7.html");
+                        break;
+                    case str8:
+                        showPage("/sample/Manuals/str8.html");
+                        break;
+                    case str9:
+                        showPage("/sample/Manuals/str9.html");
+                        break;
+                    case str10:
+                        showPage("/sample/Manuals/rysskij.html");
+                        break;
+                    case str11:
+                        showPage("/sample/Manuals/my_file.html");
+                        break;
+                    default:
+                        showPage("/sample/Manuals/spravka.html");
                 }
             }
         });
+    }
+
+    private void showPage(String path){
+        url = this.getClass().getResource(path);
+        webEngine.load(url.toString());
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -149,32 +150,6 @@
                   <Insets left="120.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <HBox prefHeight="0.0" prefWidth="297.0">
-               <children>
-                  <Separator maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="4.0" prefWidth="10.0">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <HBox.margin>
-                        <Insets top="8.0" />
-                     </HBox.margin>
-                  </Separator>
-                  <Label prefHeight="17.0" prefWidth="152.0" text="Набор символов:" />
-                  <Separator maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="3.0" prefWidth="235.0">
-                     <HBox.margin>
-                        <Insets top="8.0" />
-                     </HBox.margin>
-                  </Separator>
-               </children>
-               <VBox.margin>
-                  <Insets top="25.0" />
-               </VBox.margin>
-            </HBox>
-            <ComboBox fx:id="symbolsComboBox" prefWidth="150.0">
-               <VBox.margin>
-                  <Insets left="5.0" top="10.0" />
-               </VBox.margin>
-            </ComboBox>
          </children>
          <HBox.margin>
             <Insets />

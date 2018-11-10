@@ -8,36 +8,34 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ControllerManualWin">
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="450.0" minWidth="660.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.ControllerManualWin">
    <children>
-      <HBox minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #AAAAAA;">
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="400.0" minWidth="400.0" style="-fx-background-color: #AAAAAA;" VBox.vgrow="ALWAYS">
          <children>
-            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="300.0" minWidth="250.0" HBox.hgrow="ALWAYS">
                <children>
-                  <TabPane minHeight="595.0" minWidth="300.0" prefHeight="595.0" prefWidth="300.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tabMinHeight="20.0" tabMinWidth="100.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <tabs>
                         <Tab closable="false" text="Содержание">
                            <content>
-                              <TreeView fx:id="treeView" minHeight="565.0" minWidth="300.0" prefHeight="565.0" prefWidth="300.0" />
+                              <TreeView fx:id="treeView" />
                            </content>
                         </Tab>
                         <Tab closable="false" text="Указатель">
                           <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                          </content>
-                        </Tab>
-                        <Tab closable="false" text="Поиск">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Понятия не имею, что за указатель" />
+                                 </children></AnchorPane>
                           </content>
                         </Tab>
                      </tabs>
                   </TabPane>
                </children>
             </AnchorPane>
-            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
                <children>
-                  <WebView fx:id="WebView" minHeight="590.0" minWidth="490.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                  <WebView fx:id="WebView" minHeight="400.0" minWidth="400.0" prefHeight="-1.0" prefWidth="-1.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
