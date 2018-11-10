@@ -1,18 +1,29 @@
 package sample.Controllers;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
+import javafx.scene.control.*;
+import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-import javafx.scene.control.MultipleSelectionModel;
+
+import java.net.URL;
 
 public class ControllerManualWin {
     public WebView WebView ;
+    private String selectedItem;
     private TreeItem<String> rootTreeNode;
-    @FXML TreeView<String> treeView;
+    @FXML TreeView treeView;
+    WebEngine webEngine;
 
     public void initialize(){
+        System.out.println("blabla");
+        createTree();
+        webEngine = WebView.getEngine();
+        webEngine.load("http://ru.investing.com");
+    }
+    private void createTree(){
+        System.out.println("createTree method...");
         // определяем корневой узел
         rootTreeNode = new TreeItem<>("Справка");
 
@@ -35,10 +46,28 @@ public class ControllerManualWin {
         // добавляем узлы в корневой узел
         rootTreeNode.getChildren().add(common);
         rootTreeNode.getChildren().add(languages);
-        rootTreeNode.setExpanded(true);
+        rootTreeNode.setExpanded(false);
         // устанавливаем корневой узел для TreeView
-        treeView = new TreeView<>(rootTreeNode);
+        treeView.setRoot(rootTreeNode);
         treeView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-    }
 
+        treeView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<TreeItem<String>>() {
+            @Override
+            public void changed(ObservableValue<? extends TreeItem<String>> observable, TreeItem<String> oldValue, TreeItem<String> newValue) {
+                selectedItem = newValue.getValue();
+
+                switch (selectedItem) {
+                    case "Русский":
+                        System.out.println("русский");
+                        URL url = this.getClass().getResource("/sample/JavaFX _ TreeView.html");
+                        webEngine.load(url.toString());
+
+                        break;
+                        default:
+                            System.out.println("дефолт");
+                            webEngine.load("http://google.com");
+                }
+            }
+        });
+    }
 }

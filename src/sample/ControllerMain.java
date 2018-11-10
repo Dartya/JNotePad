@@ -235,7 +235,7 @@ public class ControllerMain {
             Stage aboutstage = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("FXML/manualWin.fxml"));
             aboutstage.setTitle("Справка");
-            aboutstage.setResizable(false);
+            aboutstage.setResizable(true);
             aboutstage.setScene(new Scene(root));
             aboutstage.getIcons().add(new Image("image/file.png"));
             aboutstage.initModality(Modality.NONE);
