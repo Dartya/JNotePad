@@ -45,6 +45,18 @@ public class ControllerMain {
     public TextArea textAreaOne;
     @FXML
     public MenuItem findMenuItem;
+    @FXML
+    public Button button1;
+    @FXML
+    public Button button2;
+    @FXML
+    public Button button3;
+    @FXML
+    public Button button4;
+    @FXML
+    public Button button5;
+
+
     public ObservableList<String> fontTypesList = FXCollections.observableList(Font.getFamilies()); //ObservableList - обертка для List
     public ObservableList<Integer> fontSizesList = FXCollections.observableArrayList(
             2, 4, 6, 8, 10, 12, 14, 16, 18, 32, 48, 72
@@ -72,6 +84,15 @@ public class ControllerMain {
     public FontWeight currentFontWeight;
     public int currentFontSize;
 
+    Tooltip btn1 = new Tooltip("Создать");
+    Tooltip btn2 = new Tooltip("Открыть");
+    Tooltip btn3 = new Tooltip("Сохранить");
+    Tooltip btn4 = new Tooltip("Сохранить как...");
+    Tooltip btn5 = new Tooltip("Выход");
+    Tooltip btn6 = new Tooltip("Выравнивание по левому краю");
+    Tooltip btn7 = new Tooltip("Выравнивание по центру");
+    Tooltip btn8 = new Tooltip("Выравнивание по правому краю");
+
     public void setFontParams(){
         currentFontFamily = Main.currentFontFamily;
         currentFontPosture = Main.currentFontPosture;
@@ -81,6 +102,14 @@ public class ControllerMain {
     }
 
     public void initialize(){
+        button1.setTooltip(btn1);
+        button2.setTooltip(btn2);
+        button3.setTooltip(btn3);
+        button4.setTooltip(btn4);
+        button5.setTooltip(btn5);
+        leftButton.setTooltip(btn6);
+        centerButton.setTooltip(btn7);
+        rightButton.setTooltip(btn8);
         fontChoice.setItems(fontTypesList);
         fontChoice.setValue(Main.currentFontFamily);
         fontSizeComboBox.setItems(fontSizesList);

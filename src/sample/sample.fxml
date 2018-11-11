@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.chart.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
@@ -20,21 +21,49 @@
               <MenuItem mnemonicParsing="false" onAction="#createFileAction" text="Создать">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                     </accelerator></MenuItem>
+                     </accelerator>
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../image/new_file.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
                   <MenuItem mnemonicParsing="false" onAction="#openAction" text="Открыть">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../image/open_file.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </MenuItem>
                   <MenuItem mnemonicParsing="false" onAction="#saveAction" text="Сохранить">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../image/save.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </MenuItem>
                   <MenuItem mnemonicParsing="false" onAction="#saveAsAction" text="Сохранить как">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
                      </accelerator>
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../image/save_as.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" onAction="#printAction" text="Печать">
@@ -43,7 +72,14 @@
                      </accelerator>
                   </MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" onAction="#exitAction" text="Выход" />
+                  <MenuItem mnemonicParsing="false" onAction="#exitAction" text="Выход">
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../image/shutdown.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></MenuItem>
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Правка">
@@ -77,11 +113,25 @@
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../image/search.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </MenuItem>
                   <MenuItem mnemonicParsing="false" onAction="#replaceAction" text="Заменить">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
+                     <graphic>
+                        <ImageView>
+                           <image>
+                              <Image url="@../image/find_and_replace.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" onAction="#highliteAction" text="Выделить все">
@@ -157,24 +207,24 @@
       </FlowPane>
       <FlowPane minHeight="25.0" minWidth="300.0" prefHeight="25.0" prefWidth="650.0" GridPane.rowIndex="1">
          <children>
-            <Button minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#createFileAction" styleClass="btn_create" textAlignment="JUSTIFY">
+            <Button fx:id="button1" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#createFileAction" styleClass="btn_create" textAlignment="JUSTIFY">
                <FlowPane.margin>
                   <Insets left="2.0" right="2.0" />
                </FlowPane.margin></Button>
-            <Button minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#openAction" styleClass="btn_open">
+            <Button fx:id="button2" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#openAction" styleClass="btn_open">
                <FlowPane.margin>
                   <Insets left="2.0" right="2.0" />
                </FlowPane.margin></Button>
-            <Button minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#saveAction" styleClass="btn_save">
+            <Button fx:id="button3" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#saveAction" styleClass="btn_save">
                <FlowPane.margin>
                   <Insets left="2.0" right="2.0" />
                </FlowPane.margin></Button>
-            <Button minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#saveAsAction" styleClass="btn_save_as">
+            <Button fx:id="button4" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#saveAsAction" styleClass="btn_save_as">
                <FlowPane.margin>
                   <Insets left="2.0" right="2.0" />
                </FlowPane.margin></Button>
             <Separator orientation="VERTICAL" prefHeight="6.0" prefWidth="0.0" />
-            <Button minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#exitAction" styleClass="btn_exit" />
+            <Button fx:id="button5" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#exitAction" styleClass="btn_exit" />
          </children>
          <GridPane.margin>
             <Insets />
